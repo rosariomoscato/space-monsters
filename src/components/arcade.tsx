@@ -158,6 +158,22 @@ export function Arcade({ showSystemLink = false }: { showSystemLink?: boolean })
           <div className="text-right"><div className="text-xs tracking-wider text-muted-foreground">{text.remaining}</div><div className="pixel-title mt-2 text-sm text-foreground sm:text-xl" data-testid="remaining">{hud.remaining}</div></div>
         </div>
 
+        <section className="border border-border bg-card px-3 py-3 sm:px-4" aria-labelledby="score-rows-heading">
+          <h2 id="score-rows-heading" className="pixel-title mb-3 text-[0.6rem] text-accent">{text.scoreRows}</h2>
+          <div className="grid grid-cols-3 gap-2 text-center">
+            {([
+              [text.topRow, 30],
+              [text.middleRow, 20],
+              [text.bottomRow, 10],
+            ] as const).map(([row, points]) => (
+              <div key={row} className="border border-border bg-background px-1 py-2">
+                <div className="text-xs text-muted-foreground">{row}</div>
+                <div className="pixel-title mt-2 text-[0.6rem] text-primary">{points} {text.points}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <div className="relative overflow-hidden border-2 border-border bg-background shadow-[0_0_0_4px_var(--card)]">
           <canvas ref={canvasRef} width={GAME_WIDTH} height={GAME_HEIGHT} className="game-canvas block aspect-[20/13] w-full" aria-label={language === "it" ? "Campo di gioco di Space Monsters" : "Space Monsters game field"} role="img" />
           {overlay ? (

@@ -27,6 +27,21 @@ test("shooting the final monster scores points and wins the round", () => {
   assert.equal(game.score, 30);
 });
 
+test("monsters score 30, 20, and 10 points from the top row to the bottom row", () => {
+  for (const [row, expectedScore] of [[0, 30], [1, 20], [2, 10]]) {
+    const game = createGame();
+    game.phase = "playing";
+    game.monsters.forEach((monster) => { monster.alive = false; });
+    const target = game.monsters[row * 8];
+    target.alive = true;
+    game.shots = [{ x: target.x + 16, y: target.y + 10, enemy: false }];
+
+    stepGame(game, idle, 0);
+
+    assert.equal(game.score, expectedScore);
+  }
+});
+
 test("enemy shots cost one life at a time and finish the game on the third hit", () => {
   const game = createGame();
   game.phase = "playing";
