@@ -28,7 +28,7 @@ jobs:
           GH_TOKEN: ${{ secrets.FACTORY_GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
-          gh api --method POST repos/rosariomoscato/ros-software-factory/dispatches \
+          gh api --method POST repos/rosariomoscato/am-e2e-0928/dispatches \
             -f event_type=issue-ready \
             -f "client_payload[repo]=$GITHUB_REPOSITORY" \
             -F "client_payload[issue]=$ISSUE_NUMBER"
