@@ -24,4 +24,8 @@ Apri l'indirizzo indicato dal terminale (di norma http://localhost:3000). Per ve
 - Computer: frecce sinistra/destra o A/D per muoverti, barra spaziatrice per sparare, P per mettere in pausa.
 - Telefono: tieni premuti i pulsanti sotto il campo da gioco.
 
+## Punteggio
+
+Ogni mostro vale punti in base alla fila: 30 punti per la fila superiore, 20 per quella centrale e 10 per quella inferiore.
+
 Prima della pubblicazione, imposta `APP_URL` sull'indirizzo definitivo per sitemap e anteprima dei link.
