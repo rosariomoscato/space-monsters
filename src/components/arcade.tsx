@@ -158,6 +158,10 @@ export function Arcade({ showSystemLink = false }: { showSystemLink?: boolean })
           <div className="text-right"><div className="text-xs tracking-wider text-muted-foreground">{text.remaining}</div><div className="pixel-title mt-2 text-sm text-foreground sm:text-xl" data-testid="remaining">{hud.remaining}</div></div>
         </div>
 
+        <p className="text-xs leading-relaxed text-muted-foreground" data-testid="scoring-legend">
+          {text.scoringLegend} <span>{text.scoringDirection}</span>
+        </p>
+
         <div className="relative overflow-hidden border-2 border-border bg-background shadow-[0_0_0_4px_var(--card)]">
           <canvas ref={canvasRef} width={GAME_WIDTH} height={GAME_HEIGHT} className="game-canvas block aspect-[20/13] w-full" aria-label={language === "it" ? "Campo di gioco di Space Monsters" : "Space Monsters game field"} role="img" />
           {overlay ? (
