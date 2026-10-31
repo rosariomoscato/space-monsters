@@ -168,10 +168,10 @@ export function Arcade({ showSystemLink = false }: { showSystemLink?: boolean })
         </div>
         <p className="text-xs leading-relaxed text-muted-foreground">{text.scoringDirection}</p>
 
-        <div className="relative overflow-hidden border-2 border-border bg-background shadow-[0_0_0_4px_var(--card)]">
-          <canvas ref={canvasRef} width={GAME_WIDTH} height={GAME_HEIGHT} className="game-canvas block aspect-[20/13] w-full" aria-label={language === "it" ? "Campo di gioco di Space Monsters" : "Space Monsters game field"} role="img" />
+        <div className="grid overflow-hidden border-2 border-border bg-background shadow-[0_0_0_4px_var(--card)]">
+          <canvas ref={canvasRef} width={GAME_WIDTH} height={GAME_HEIGHT} className="game-canvas col-start-1 row-start-1 block aspect-[20/13] w-full" aria-label={language === "it" ? "Campo di gioco di Space Monsters" : "Space Monsters game field"} role="img" />
           {overlay ? (
-            <div className="absolute inset-0 flex items-center justify-center bg-background/80 p-3 backdrop-blur-[2px]" role="status" aria-live="polite">
+            <div className="col-start-1 row-start-1 flex items-center justify-center bg-background/80 p-3 backdrop-blur-[2px]" role="status" aria-live="polite">
               <div className="arcade-grid flex w-full max-w-md flex-col items-center gap-4 border border-accent bg-card/95 p-5 text-center shadow-[8px_8px_0_var(--background)] sm:gap-6 sm:p-8">
                 <span className="text-xl text-accent" aria-hidden="true">✦ ✦ ✦</span>
                 <h2 className="pixel-title text-sm leading-loose text-primary sm:text-xl">{headline}</h2>
