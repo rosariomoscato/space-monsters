@@ -1,8 +1,8 @@
-# Space Monsters
+# Livia Monster
 
-![Schermata di gioco di Space Monsters](space-monsters.png)
+![Schermata di gioco di Livia Monster](space-monsters.png)
 
-**Space Monsters** è un piccolo gioco arcade ispirato a Space Invaders: muovi la navicella, spara ai mostri e difendi la Terra in una sola ondata. Hai tre vite; puoi giocare con tastiera o touch e scegliere tra italiano e inglese.
+**Livia Monster** è un piccolo gioco arcade ispirato a Space Invaders: muovi la navicella, spara ai mostri e difendi la Terra in una sola ondata. Hai tre vite; puoi giocare con tastiera o touch e scegliere tra italiano e inglese.
 
 ## Come è fatto
 
