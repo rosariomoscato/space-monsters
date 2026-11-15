@@ -140,7 +140,7 @@ export function Arcade({ showSystemLink = false }: { showSystemLink?: boolean })
       <header className="flex items-start justify-between gap-4 border-b border-border pb-6">
         <div className="flex flex-col gap-3">
           <span className="font-mono text-xs font-bold tracking-[0.22em] text-accent">✳ {text.eyebrow}</span>
-          <h1 className="pixel-title text-xl leading-relaxed text-primary sm:text-3xl">LIVIA<br className="sm:hidden" /> MONSTER<span className="text-accent">_</span></h1>
+          <h1 className="pixel-title text-xl leading-relaxed text-primary uppercase sm:text-3xl">{site.name}<span className="text-accent" aria-hidden="true">_</span></h1>
           <p className="text-sm text-muted-foreground sm:text-base">{text.subtitle}</p>
         </div>
         <div className="flex items-center gap-1 border border-border bg-card p-1" aria-label="Language / Lingua">
@@ -204,7 +204,7 @@ export function Arcade({ showSystemLink = false }: { showSystemLink?: boolean })
       <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-5 text-xs text-muted-foreground">
         <p>{text.credit} <a href="https://rosmoscato.xyz" target="_blank" rel="noopener noreferrer" className="text-accent underline decoration-accent/40 underline-offset-4 hover:text-primary">Rosario Moscato</a></p>
         {showSystemLink ? <a href="/settings/system" className="text-accent underline underline-offset-4 hover:text-primary">{text.system}</a> : null}
-        <span className="pixel-title text-[0.6rem] text-primary">LIVIA MONSTER ©</span>
+        <span className="pixel-title text-[0.6rem] text-primary uppercase">{site.name} ©</span>
       </footer>
     </main>
   );
