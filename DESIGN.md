@@ -1,4 +1,4 @@
-# Space Monsters — design system
+# Livia Monster — design system
 
 Un piccolo cabinato arcade nello spazio: leggibile, energico e immediato, con grafica a pixel originale. Il gioco occupa il centro della pagina e non è nascosto dietro una landing page.
 

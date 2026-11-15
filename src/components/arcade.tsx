@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Crosshair, Pause, Play, RotateCcw } from "lucide
 import { Button } from "@/components/ui/button";
 import { drawGame, readPalette } from "@/lib/draw-game";
 import { copy } from "@/lib/i18n";
+import { site } from "@/lib/site";
 import { useLanguage } from "@/lib/use-language";
 import { createGame, GAME_HEIGHT, GAME_WIDTH, stepGame, type Game, type Input } from "@/lib/game";
 
@@ -139,7 +140,7 @@ export function Arcade({ showSystemLink = false }: { showSystemLink?: boolean })
       <header className="flex items-start justify-between gap-4 border-b border-border pb-6">
         <div className="flex flex-col gap-3">
           <span className="font-mono text-xs font-bold tracking-[0.22em] text-accent">✳ {text.eyebrow}</span>
-          <h1 className="pixel-title text-xl leading-relaxed text-primary sm:text-3xl">SPACE<br className="sm:hidden" /> MONSTERS<span className="text-accent">_</span></h1>
+          <h1 className="pixel-title text-xl leading-relaxed text-primary sm:text-3xl">LIVIA<br className="sm:hidden" /> MONSTER<span className="text-accent">_</span></h1>
           <p className="text-sm text-muted-foreground sm:text-base">{text.subtitle}</p>
         </div>
         <div className="flex items-center gap-1 border border-border bg-card p-1" aria-label="Language / Lingua">
@@ -151,7 +152,7 @@ export function Arcade({ showSystemLink = false }: { showSystemLink?: boolean })
         </div>
       </header>
 
-      <section className="flex flex-col gap-3" aria-label="Space Monsters">
+      <section className="flex flex-col gap-3" aria-label={site.name}>
         <div className="grid grid-cols-3 gap-2 border border-border bg-card p-3 sm:gap-4 sm:p-4">
           <div><div className="text-xs tracking-wider text-muted-foreground">{text.score}</div><div className="pixel-title mt-2 text-sm text-primary sm:text-xl" data-testid="score">{String(hud.score).padStart(4, "0")}</div></div>
           <div className="border-x border-border text-center"><div className="text-xs tracking-wider text-muted-foreground">{text.lives}</div><div className="pixel-title mt-2 text-sm text-accent sm:text-xl" data-testid="lives">{hud.lives}</div></div>
@@ -159,7 +160,7 @@ export function Arcade({ showSystemLink = false }: { showSystemLink?: boolean })
         </div>
 
         <div className="grid overflow-hidden border-2 border-border bg-background shadow-[0_0_0_4px_var(--card)]">
-          <canvas ref={canvasRef} width={GAME_WIDTH} height={GAME_HEIGHT} className="game-canvas col-start-1 row-start-1 block aspect-[20/13] w-full" aria-label={language === "it" ? "Campo di gioco di Space Monsters" : "Space Monsters game field"} role="img" />
+          <canvas ref={canvasRef} width={GAME_WIDTH} height={GAME_HEIGHT} className="game-canvas col-start-1 row-start-1 block aspect-[20/13] w-full" aria-label={language === "it" ? `Campo di gioco di ${site.name}` : `${site.name} game field`} role="img" />
           {overlay ? (
             <div className="col-start-1 row-start-1 flex items-center justify-center bg-background/80 p-3 backdrop-blur-[2px]" role="status" aria-live="polite">
               <div className="arcade-grid flex w-full max-w-md flex-col items-center gap-4 border border-accent bg-card/95 p-5 text-center shadow-[8px_8px_0_var(--background)] sm:gap-6 sm:p-8">
@@ -203,7 +204,7 @@ export function Arcade({ showSystemLink = false }: { showSystemLink?: boolean })
       <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-5 text-xs text-muted-foreground">
         <p>{text.credit} <a href="https://rosmoscato.xyz" target="_blank" rel="noopener noreferrer" className="text-accent underline decoration-accent/40 underline-offset-4 hover:text-primary">Rosario Moscato</a></p>
         {showSystemLink ? <a href="/settings/system" className="text-accent underline underline-offset-4 hover:text-primary">{text.system}</a> : null}
-        <span className="pixel-title text-[0.6rem] text-primary">SPACE MONSTERS ©</span>
+        <span className="pixel-title text-[0.6rem] text-primary">LIVIA MONSTER ©</span>
       </footer>
     </main>
   );
