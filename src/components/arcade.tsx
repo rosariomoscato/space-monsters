@@ -201,7 +201,7 @@ export function Arcade({ showSystemLink = false }: { showSystemLink?: boolean })
       </div>
 
       <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-5 text-xs text-muted-foreground">
-        <p>{text.credit} <a href="https://rosmoscato.xyz" target="_blank" rel="noopener noreferrer" className="text-accent underline decoration-accent/40 underline-offset-4 hover:text-primary">Rosario Moscato</a>. - 2026</p>
+        <p>{text.credit} <a href="https://rosmoscato.xyz" target="_blank" rel="noopener noreferrer" className="text-accent underline decoration-accent/40 underline-offset-4 hover:text-primary">Rosario Moscato</a> - 2026</p>
         {showSystemLink ? <a href="/settings/system" className="text-accent underline underline-offset-4 hover:text-primary">{text.system}</a> : null}
         <span className="pixel-title text-[0.6rem] text-primary">SPACE MONSTERS ©</span>
       </footer>
